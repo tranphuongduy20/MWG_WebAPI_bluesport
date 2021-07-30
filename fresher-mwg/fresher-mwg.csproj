@@ -259,12 +259,6 @@
     <Content Include="Views\Common\Product.cshtml" />
     <Content Include="Views\Common\Pagination.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\fresher-mwg.DTO\fresher-mwg.DTO.csproj">
-      <Project>{e6eec429-e5af-494c-9085-2494a18eba53}</Project>
-      <Name>fresher-mwg.DTO</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
