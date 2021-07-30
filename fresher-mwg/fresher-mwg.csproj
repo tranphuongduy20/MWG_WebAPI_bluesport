@@ -143,7 +143,6 @@
     <Compile Include="Models\Detail\ProductSizeModel.cs" />
     <Compile Include="Models\FilterBrandModel.cs" />
     <Compile Include="Models\FilterGenderModel.cs" />
-    <Compile Include="Models\FilterModel.cs" />
     <Compile Include="Models\FilterPriceModel.cs" />
     <Compile Include="Models\FilterProductModel.cs" />
     <Compile Include="Models\FilterSportModel.cs" />
