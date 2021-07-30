@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/Contents/css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="~/Contents/css/global.css">
+    <link rel="stylesheet" type="text/css" href="~/Contents/css/listing.css">
+    @RenderSection("CSS", false)
+</head>
+<body>
+    @*header*@
+
+
+   @Html.Action("Menu", "Home")
+
+    @RenderBody()
+
+    @*footer*@
+    @Html.Partial("~/Views/Common/_ParitalFooter.cshtml")
+
+
+
+    <script src="~/Contents/js/jquery.min.js"></script>
+    <script src="~/Contents/js/common.js"></script>
+    @RenderSection("JS", false)
+</body>
+</html>

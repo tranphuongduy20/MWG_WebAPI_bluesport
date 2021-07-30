@@ -1,0 +1,18 @@
+﻿@model List<fresher_mwg.Models.LocationModel>
+
+<!-- Location Visit -->
+<div class="visit__list">
+    @foreach (var item in this.Model)
+    {
+        <a href="@item.Path" class="item">
+            <p class="txt-name">@item.Name</p>
+            <div class="txt-address">
+                <p class="fInter">
+                    @item.Address
+                </p>
+                <span><i class="icon-visitmap"></i></span>
+            </div>
+        </a>
+
+    }
+</div>

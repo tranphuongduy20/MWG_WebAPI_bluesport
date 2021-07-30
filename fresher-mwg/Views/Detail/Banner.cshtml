@@ -1,0 +1,8 @@
+﻿@model List<fresher_mwg.Models.Detail.BannerModel>
+
+<div class="fotorama">
+    @foreach (var item in Model)
+    {
+        <img src="@item.Path" alt="@item.TextAlt">
+    }
+</div>

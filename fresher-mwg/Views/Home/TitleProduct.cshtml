@@ -1,0 +1,16 @@
+﻿@model List<fresher_mwg.Models.TitleProductModel>
+
+
+<ul class="common-tab">
+    @foreach (var item in this.Model)
+    {
+        if (item.CheckAction)
+        {
+            <li class="active">@item.Name</li>
+        }
+        else
+        {
+            <li>@item.Name</li>
+        }
+    }
+</ul>

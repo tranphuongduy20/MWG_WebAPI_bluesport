@@ -1,0 +1,146 @@
+﻿@model fresher_mwg.ViewModel.vmHome
+
+@section CSS{
+    <link rel="stylesheet" type="text/css" href="~/Contents/css/home.css">
+}
+
+@section JS{
+    <script src="~/Contents/js/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".trademark__list").owlCarousel({
+                items: 1,
+                dots: true,
+                nav: false,
+            });
+            $(".trademark__post").owlCarousel({
+                items: 1,
+                dots: true,
+                nav: false,
+            });
+            $('.visit-checkbox').click(function () {
+                $('.visit-checkbox span').toggleClass('act');
+            });
+            $(".slider-banner").owlCarousel({
+                loop: true,
+                items: 1,
+                dots: true,
+                nav: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true
+            });
+        });
+    </script>
+}
+
+<section>
+    @Html.Partial("~/Views/Common/Banner.cshtml", Model.Banners)
+
+    @*@Html.Raw( Newtonsoft.Json.JsonConvert.SerializeObject(Model.Banners));*@
+    <!-- / Banner common -->
+    <!-- Hot deal PROMO -->
+    <div class="promo">
+        <h2 class="ptomo__ttl">HOT DEAL HÔM NAY</h2>
+        <!--Title Products-->
+        @Html.Partial("~/Views/Home/TitleProduct.cshtml", Model.TitleProductsAll)
+        <!-- Products -->
+        @Html.Partial("~/Views/Home/ProductForAll.cshtml", Model.ProductsAll)
+    </div>
+    <!-- / Hot deal PROMO -->
+    <!-- Thể thao nam -->
+    <div class="block">
+        <div class="block__banner">
+            <img src="~/Contents/images/block_banner01.png" alt="Thể thao nam">
+        </div>
+        <!--Title Products Male-->
+        @Html.Partial("~/Views/Home/TitleProduct.cshtml", Model.TitleProductsMale)
+        <!-- Products Male-->
+        @Html.Partial("~/Views/Home/Product.cshtml", Model.ProductsMale)
+        <a href="#" class="c-btn c-btn-black">
+            <span>XEM TẤT CẢ GIÀY DÉP NAM</span>
+        </a>
+    </div>
+    <!-- / Thể thao nam -->
+    <!-- Thể thao nữ -->
+    <div class="block">
+        <div class="block__banner">
+            <img src="~/Contents/images/block_banner02.png" alt="Thể thao nữ">
+        </div>
+        <!--Title Products Male-->
+        @Html.Partial("~/Views/Home/TitleProduct.cshtml", Model.TitleProductsFemale)
+        <!-- Products Male-->
+        @Html.Partial("~/Views/Home/Product.cshtml", Model.ProductsFemale)
+        <a href="#" class="c-btn c-btn-black">
+            <span>XEM TẤT CẢ ÁO - QUẦN NỮ</span>
+        </a>
+    </div>
+    <!-- / Thể thao nữ -->
+    <!-- Thể thao trẻ em -->
+    <div class="block">
+        <div class="block__banner">
+            <img src="~/Contents/images/block_banner03.png" alt="Thể thao trẻ em">
+        </div>
+        <!--Title Products-->
+        @Html.Partial("~/Views/Home/TitleProduct.cshtml", Model.TitleProductsAll)
+        <!-- Products -->
+        @Html.Partial("~/Views/Home/Product.cshtml", Model.ProductsAll)
+        <a href="#" class="c-btn c-btn-black">
+            <span>XEM TẤT CẢ GIÀY DÉP TRẺ EM</span>
+        </a>
+    </div>
+    <!-- / Thể thao trẻ em -->
+    <!-- Xe đạp -->
+    <div class="block">
+        <div class="block__banner">
+            <img src="~/Contents/images/block_banner04.png" alt="Xe đạp">
+        </div>
+        <!--Title Products-->
+        @Html.Partial("~/Views/Home/TitleProduct.cshtml", Model.TitleProductsAll)
+        <!-- Products -->
+        @Html.Partial("~/Views/Home/Product.cshtml", Model.ProductsAll)
+        <a href="#" class="c-btn c-btn-black">
+            <span>XEM TẤT CẢ XE ĐẠP NỔI BẬT</span>
+        </a>
+    </div>
+    <!-- / Xe đạp -->
+    <!-- Các môn thể thao -->
+    <div class="block">
+        <div class="block__banner">
+            <img src="~/Contents/images/block_banner05.png" alt="Các môn thể thao">
+        </div>
+        <!--Title Products-->
+        @Html.Partial("~/Views/Home/TitleProduct.cshtml", Model.TitleProductsAll)
+        <!-- Products -->
+        @Html.Partial("~/Views/Home/Product.cshtml", Model.ProductsAll)
+        <a href="#" class="c-btn c-btn-black">
+            <span>XEM TẤT CẢ CÁC SẢN PHẨM CHẠY BỘ</span>
+        </a>
+    </div>
+    <!-- / Các môn thể thao -->
+
+    <div class="trademark">
+        <h2 class="trademark__ttl">XEM SẢN PHẨM <br>CÁC THƯƠNG HIỆU NỔI TIẾNG</h2>
+        <!-- Brand -->
+        @Html.Partial("~/Views/Home/Brand.cshtml", Model.PageBrand)
+        <!-- Banner Footer-->
+        @Html.Partial("~/Views/Home/BannerFooter.cshtml", Model.BannerFooter)
+    </div>
+
+    <div class="visit">
+        <h2 class="visit__title">GHÉ THĂM BLUESPORT</h2>
+        <p class="txt fInter">Hiện mở bán 4 siêu thị tại TP. Hồ Chí Minh</p>
+        <div class="visit-checkbox fInter">
+            <span></span>
+            <p>Tìm siêu thị gần bạn</p>
+        </div>
+        <!-- Location Visit -->
+        @Html.Partial("~/Views/Home/Location.cshtml", Model.Location)
+        <a href="javascript:void(0)" class="visit-btn">
+            <span>XEM THÊM @Model.TotalLocation SIÊU THỊ</span>
+        </a>
+    </div>
+    <!-- Commitment -->
+    @Html.Partial("~/Views/Home/Commitment.cshtml", Model.Commitment)
+
+</section>

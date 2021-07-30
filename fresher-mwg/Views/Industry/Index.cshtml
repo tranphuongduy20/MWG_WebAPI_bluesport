@@ -1,0 +1,317 @@
+﻿@model fresher_mwg.ViewModel.vmIndustry
+
+@section CSS{
+    <link rel="stylesheet" type="text/css" href="~/Contents/css/nganhhang.css">
+
+}
+
+@section JS{
+    <script src="~/Contents/js/owl.carousel.min.js"></script>
+    <script src="~/Contents/js/nganhhang.js"></script>
+}
+
+<section>
+
+    <!-- Banner common -->
+    @Html.Partial("~/Views/Common/Banner.cshtml", Model.Banners)
+    <!-- / Banner common -->
+
+    <div class="boxtop">
+        <p class="txt01">@Model.TitleIndustry</p>
+        <p class="txt02 fInter">@Model.TotalPorduct sản phẩm</p>
+    </div>
+
+    <div class="block-scroll">
+        <div class="jsfix scrolling_inner">
+            <div class="box-filter block-scroll-main scrolling">
+                <div class="filter-item filter-total">
+                    <div class="filter-item__title">
+                        <i class="icon-filter"></i>Lọc
+                        <strong class="number">2</strong>
+                    </div>
+                </div>
+                <div class="show-total" id="wrapper">
+                    <div class="flt-fixbtn">
+                        <a href="javascript:void(0)" class="btn-closefilter">
+                            <i class="icon-close-filter"></i>
+                        </a>
+                    </div>
+                    <div class="show-total__main">
+                        <div class="filter-selected">
+                            <div class="filter-selected-top">
+                                <p>Tiêu chí đã chọn:</p>
+                                <a href="javascript:void(0)" class="clear-selected-all">Xóa tất cả</a>
+                            </div>
+                            <div class="scrolling_inner">
+                                <div class="filter-selected-list scrolling">
+                                    <div class="item">
+                                        Adidas
+                                        <a href="javascript:void(0)" class="clear-selected">
+                                            <i class="icon-clear-selected"></i>
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        Giày thể thao
+                                        <a href="javascript:void(0)" class="clear-selected">
+                                            <i class="icon-clear-selected"></i>
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        Dưới 500 ngàn
+                                        <a href="javascript:void(0)" class="clear-selected">
+                                            <i class="icon-clear-selected"></i>
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        Adidas
+                                        <a href="javascript:void(0)" class="clear-selected">
+                                            <i class="icon-clear-selected"></i>
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        Giày thể thao
+                                        <a href="javascript:void(0)" class="clear-selected">
+                                            <i class="icon-clear-selected"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="show-total-item clearfix">
+                            <p class="show-total-txt">Sản phẩm</p>
+                            <div class="filter-list">
+                                <a href="#" class="c-btnbox">Giày thể thao</a>
+                                <a href="#" class="c-btnbox">Áo quần</a>
+                                <a href="#" class="c-btnbox">Ba lô</a>
+                                <a href="#" class="c-btnbox">Tai nghe</a>
+                                <a href="#" class="c-btnbox">Túi xách</a>
+                                <a href="#" class="c-btnbox">Đồng hồ</a>
+                                <a href="#" class="c-btnbox">Tất vớ</a>
+                                <a href="#" class="c-btnbox">Mũ nón</a>
+                                <a href="#" class="c-btnbox">Phụ kiện khác</a>
+                            </div>
+                        </div>
+
+                        <div class="show-total-item clearfix">
+                            <p class="show-total-txt">Hãng</p>
+                            <div class="filter-list filter-list--column">
+                                <a href="#" class="c-btnbox">
+                                    <img src="./images/filter_thuonghieu01.png" width="60" height="16" alt="thuong hieu">
+                                </a>
+                                <a href="#" class="c-btnbox">
+                                    <img src="./images/filter_thuonghieu02.png" width="49" height="22" alt="thuong hieu">
+                                </a>
+                                <a href="#" class="c-btnbox">
+                                    <img src="./images/filter_thuonghieu03.png" width="41" height="22" alt="thuong hieu">
+                                </a>
+                                <a href="#" class="c-btnbox">
+                                    <img src="./images/filter_thuonghieu04.png" width="67" height="10" alt="thuong hieu">
+                                </a>
+                                <a href="#" class="c-btnbox">
+                                    <img src="./images/filter_thuonghieu05.png" width="37" height="20" alt="thuong hieu">
+                                </a>
+                                <a href="#" class="c-btnbox">
+                                    <img src="./images/filter_thuonghieu06.png" width="58" height="20" alt="thuong hieu">
+                                </a>
+                                <a href="#" class="c-btnbox">
+                                    <img src="./images/filter_thuonghieu07.png" width="63" height="20" alt="thuong hieu">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="show-total-item">
+                            <p class="show-total-txt">Thể thao</p>
+                            <div class="filter-list">
+                                <a href="#" class="c-btnbox">Đạp xe</a>
+                                <a href="#" class="c-btnbox">Chạy bộ</a>
+                                <a href="#" class="c-btnbox">Bóng đá</a>
+                                <a href="#" class="c-btnbox">Bóng rổ</a>
+                                <a href="#" class="c-btnbox">Fitness/Yoga</a>
+                            </div>
+                        </div>
+
+                        <div class="show-total-item">
+                            <p class="show-total-txt">Giới tính</p>
+                            <div class="filter-list">
+                                <a href="#" class="c-btnbox">Nam</a>
+                                <a href="#" class="c-btnbox">Nữ</a>
+                                <a href="#" class="c-btnbox">Trẻ em</a>
+                                <a href="#" class="c-btnbox">Unisex</a>
+                            </div>
+                        </div>
+
+                        <div class="show-total-item">
+                            <p class="show-total-txt">Giá</p>
+                            <div class="filter-list">
+                                <a href="#" class="c-btnbox">Dưới 500 ngàn</a>
+                                <a href="#" class="c-btnbox">Từ 500 - 1 triệu</a>
+                                <a href="#" class="c-btnbox">Từ 1 - 2 triệu</a>
+                                <a href="#" class="c-btnbox">Từ 2 - 3 triệu</a>
+                                <a href="#" class="c-btnbox disabled">Trên 3 triệu</a>
+                                <p class="txt-select">
+                                    <i class="icon-select"></i>
+                                    Hoặc lựa chọn mức giá phù hợp với bạn
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-whitefix"></div>
+                    <div class="filtertotal-button">
+                        <a href="javascript:void(0)" class="btntotal-close">XOÁ LỌC</a>
+                        <a href="#" class="btntotal-readmore">XEM 467 KẾt QUẢ</a>
+                    </div>
+                </div>
+                <div class="filter-item">
+                    <div class="filter-item__title jsTitle"><span>Sản phẩm</span></div>
+                    <div class="filter-show">
+                        <div class="filter-list">
+                            <a href="#" class="c-btnbox">Giày thể thao</a>
+                            <a href="#" class="c-btnbox">Áo quần</a>
+                            <a href="#" class="c-btnbox">Ba lô</a>
+                            <a href="#" class="c-btnbox">Tai nghe</a>
+                            <a href="#" class="c-btnbox">Túi xách</a>
+                            <a href="#" class="c-btnbox">Đồng hồ</a>
+                            <a href="#" class="c-btnbox">Tất vớ</a>
+                            <a href="#" class="c-btnbox">Mũ nón</a>
+                            <a href="#" class="c-btnbox">Phụ kiện khác</a>
+                        </div>
+                        <div class="filter-button">
+                            <a href="javascript:void(0)" class="btn-filter-close">Bỏ chọn</a>
+                            <a href="#" class="btn-filter-readmore">Xem 47 kết quả</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-item">
+                    <div class="filter-item__title jsTitle"><span>Hãng</span></div>
+                    <div class="filter-show">
+                        <div class="filter-list filter-list--column">
+                            <a href="#" class="c-btnbox">
+                                <img src="./images/filter_thuonghieu01.png" width="60" height="16" alt="thuong hieu">
+                            </a>
+                            <a href="#" class="c-btnbox">
+                                <img src="./images/filter_thuonghieu02.png" width="49" height="22" alt="thuong hieu">
+                            </a>
+                            <a href="#" class="c-btnbox">
+                                <img src="./images/filter_thuonghieu03.png" width="41" height="22" alt="thuong hieu">
+                            </a>
+                            <a href="#" class="c-btnbox">
+                                <img src="./images/filter_thuonghieu04.png" width="67" height="10" alt="thuong hieu">
+                            </a>
+                            <a href="#" class="c-btnbox">
+                                <img src="./images/filter_thuonghieu05.png" width="37" height="20" alt="thuong hieu">
+                            </a>
+                            <a href="#" class="c-btnbox">
+                                <img src="./images/filter_thuonghieu06.png" width="58" height="20" alt="thuong hieu">
+                            </a>
+                            <a href="#" class="c-btnbox">
+                                <img src="./images/filter_thuonghieu07.png" width="63" height="20" alt="thuong hieu">
+                            </a>
+                        </div>
+                        <div class="filter-button">
+                            <a href="javascript:void(0)" class="btn-filter-close">Bỏ chọn</a>
+                            <a href="#" class="btn-filter-readmore">Xem 47 kết quả</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-item">
+                    <div class="filter-item__title jsTitle"><span>Thể thao</span></div>
+                    <div class="filter-show">
+                        <div class="filter-list">
+                            <a href="#" class="c-btnbox">Đạp xe</a>
+                            <a href="#" class="c-btnbox">Chạy bộ</a>
+                            <a href="#" class="c-btnbox">Bóng đá</a>
+                            <a href="#" class="c-btnbox">Bóng rổ</a>
+                            <a href="#" class="c-btnbox">Fitness/Yoga</a>
+                        </div>
+                        <div class="filter-button">
+                            <a href="javascript:void(0)" class="btn-filter-close">Bỏ chọn</a>
+                            <a href="#" class="btn-filter-readmore">Xem 47 kết quả</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-item">
+                    <div class="filter-item__title jsTitle"><span>Giới tính</span></div>
+                    <div class="filter-show">
+                        <div class="filter-list">
+                            <a href="#" class="c-btnbox">Nam</a>
+                            <a href="#" class="c-btnbox">Nữ</a>
+                            <a href="#" class="c-btnbox">Trẻ em</a>
+                            <a href="#" class="c-btnbox">Unisex</a>
+                        </div>
+                        <div class="filter-button">
+                            <a href="javascript:void(0)" class="btn-filter-close">Bỏ chọn</a>
+                            <a href="#" class="btn-filter-readmore">Xem 47 kết quả</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-item">
+                    <div class="filter-item__title jsTitle"><span>Giá</span></div>
+                    <div class="filter-show">
+                        <div class="filter-list">
+                            <a href="#" class="c-btnbox">Dưới 500 ngàn</a>
+                            <a href="#" class="c-btnbox">Từ 500 - 1 triệu</a>
+                            <a href="#" class="c-btnbox">Từ 1 - 2 triệu</a>
+                            <a href="#" class="c-btnbox">Từ 2 - 3 triệu</a>
+                            <a href="#" class="c-btnbox disabled">Trên 3 triệu</a>
+                        </div>
+                        <div class="filter-button">
+                            <a href="javascript:void(0)" class="btn-filter-close">Bỏ chọn</a>
+                            <a href="#" class="btn-filter-readmore">Xem 47 kết quả</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scrolling_inner scroll-quicklink">
+            <div class="box-quicklink block-scroll-main scrolling">
+                <p class="box-quicklink__txt">Phổ biến:</p>
+                <a href="javascript:void(0)" class="box-quicklink__item">Giày dép</a>
+                <a href="javascript:void(0)" class="box-quicklink__item bd-radius">Áo quần</a>
+                <a href="javascript:void(0)" class="box-quicklink__item bd-radius">
+                    <img src="./images/filter_thuonghieu04.png" alt="test" width="94" height="14">
+                </a>
+                <a href="javascript:void(0)" class="box-quicklink__item bg-gray bd-radius">Nam</a>
+                <a href="javascript:void(0)" class="box-quicklink__item bg-gray bd-radius">Nữ</a>
+                <a href="javascript:void(0)" class="box-quicklink__item bg-gray bd-radius">Trẻ em</a>
+                <a href="javascript:void(0)" class="box-quicklink__item bd-radius">
+                    <img src="./images/filter_thuonghieu03.png" alt="test" width="41" height="22">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <ul class="box-sort fInter">
+        <li class="item active">Nổi bật</li>
+        <li class="item">Mới ra mắt</li>
+        <li class="item">% giảm</li>
+        <li class="item">
+            Giá
+            <i class="icon-sort"></i>
+        </li>
+    </ul>
+
+    <div class="listproduct fInter">
+        @Html.Partial("~/Views/Common/Product.cshtml", Model.Products)
+    </div>
+
+    <div class="pagcomment fInter">
+        <a href="#" class="button-cmt button-cmt-prev"></a>
+        @Html.Partial("~/Views/Common/Pagination.cshtml", Model.TotalPagination)
+        <a href="#" class="button-cmt button-cmt-next"></a>
+    </div>
+
+    <div class="note fInter">
+        <p class="note__ttl">Lưu ý khi mua đồ thể thao nữ</p>
+        <ul class="note__list">
+            @foreach (var item in Model.Notes)
+            {
+                <li>@item</li>
+            }
+        </ul>
+        <div class="bg-note"></div>
+        <a href="javascript:void(0)" class="btn-note fRoboto">XEM THÊM</a>
+    </div>
+
+
+</section>

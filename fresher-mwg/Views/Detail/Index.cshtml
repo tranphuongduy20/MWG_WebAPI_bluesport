@@ -1,0 +1,133 @@
+﻿@model fresher_mwg.ViewModel.vmDetail
+@{ 
+    var ProductInfo = Model.ProductInfo;
+    var PaymentInfo = Model.PaymentInfo;
+    var SaleInfo = Model.SaleInfo;
+}
+
+@section CSS{
+    <link rel="stylesheet" type="text/css" href="~/Contents/css/chitiet.css">
+    <link rel="stylesheet" type="text/css" href="~/Contents/css/fotorama.css">
+}
+
+@section JS{
+    <script src="~/Contents/js/chitiet.js"></script>
+    <script src="~/Contents/js/fotorama.js"></script>
+}
+
+<section>
+    @Html.Partial("~/Views/Detail/Banner.cshtml", Model.Banners)
+    <div class="detail-title fInter">
+        <h3>
+            <span>@ProductInfo.Brand</span> @ProductInfo.Detail  @if (ProductInfo.Status == 1)
+            {
+                <span class="status">Còn hàng</span>
+            }
+        </h3>
+
+    </div>
+    <div class="detail-price fInter">
+        <span class="price-current">@(ProductInfo.PriceAfter + "₫") </span>
+        <span class="price-old">@ProductInfo.Price₫</span>
+        <span class="price-percent">-@ProductInfo.Sale%</span>
+    </div>
+    <div class="select-color fInter">
+        <p class="select-color-ttl">Chọn màu: <span>@PaymentInfo.Color</span></p>
+        <ul>
+            @foreach (var item in PaymentInfo.ProductImages)
+            {
+                <li class="act">
+                    <img src="@item.PathImage" alt="@item.AltImage">
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="select-size">
+        <div class="size-top fInter">
+            <p class="size-top-left">Chọn size: <span>@PaymentInfo.Size</span></p>
+            <div class="size-top-right">
+                <i class="icon-size"></i>
+                Cách chọn size
+            </div>
+        </div>
+        <ul class="size-list">
+            @foreach (var item in PaymentInfo.ProductSizes)
+            {
+                if (item.CheckActive)
+                {
+                    <li class="active">@item.Size</li>
+                }
+                else
+                {
+                    <li>@item.Size</li>
+                }
+            }
+        </ul>
+    </div>
+    <div class="box-promo fInter">
+        <p class="box-promo-txt">@SaleInfo.Title</p>
+        <ul class="box-promo-list">
+            @foreach (var item in SaleInfo.ProductSaleInfos)
+            {
+                if (item.Title != null)
+                {
+                    <li>
+                        <span>@item.Title</span> @item.Detail
+                    </li>
+                }
+                else if (item.TitlePath != null)
+                {
+                    <li>
+                        @item.Detail (<a href="@item.Path">@item.TitlePath</a>)
+                    </li>
+                }
+                else
+                {
+                    <li>@item.Detail</li>
+                }
+            }
+        </ul>
+        <div class="bg-hide"></div>
+        <a href="javascript:void(0)" class="box-promo-btn"><span>Xem thêm</span></a>
+    </div>
+    <div class="detail-btn">
+        <a href="#" class="btn btn-addcart">THÊM VÀO GIỎ</a>
+        <a href="#" class="btn btn-spmarket">SIÊU THỊ CÒN HÀNG</a>
+    </div>
+    <div class="highlights fInter">
+        <p>Đặc điểm nổi bật:</p>
+        <ul>
+            @foreach (var item in ProductInfo.Features)
+            {
+                <li>@item</li>
+            }
+        </ul>
+    </div>
+
+    <ul class="policy fInter">
+        @foreach (var item in ProductInfo.Commitments)
+        {
+            <li>
+                <div class="iconl">
+                    <i class="@item.Icon"></i>
+                </div>
+                <p>@item.Detail</p>
+            </li>
+        }
+    </ul>
+
+    <div class="info">
+        <div class="info__item">
+            <p class="info-title">Thông tin sản phẩm</p>
+            <div class="info-content">
+
+            </div>
+        </div>
+        <div class="info__item">
+            <p class="info-title">Thông tin thương hiệu Adidas</p>
+            <div class="info-content">
+
+            </div>
+        </div>
+    </div>
+</section>

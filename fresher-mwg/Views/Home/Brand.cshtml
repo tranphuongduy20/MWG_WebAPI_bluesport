@@ -1,0 +1,13 @@
+﻿@model List<fresher_mwg.Models.PageBrandModel>
+<div class="trademark__list owl-carousel">
+    @foreach (var item in Model)
+    {
+     <div class="item">
+            @foreach(var brand in item.BrandModel)
+            {
+                <p><img src="@brand.image" alt="@brand.path" width="@brand.width" height="@brand.height"></p>
+            }
+     </div>
+    }
+</div>
+

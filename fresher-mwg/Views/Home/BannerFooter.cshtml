@@ -1,0 +1,12 @@
+﻿@model List<fresher_mwg.Models.BannerModel>
+<!-- Banner footer -->
+<div class="trademark__post owl-carousel">
+    @foreach (var item in this.Model)
+    {
+    <a href="#" class="post-item">
+        <img src="@item.ImageUrl" alt="@item.Title">
+        <p class="fInter">@item.Detail</p>
+    </a>
+    }
+</div>
+

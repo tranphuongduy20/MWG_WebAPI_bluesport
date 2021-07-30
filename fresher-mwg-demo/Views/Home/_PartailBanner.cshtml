@@ -1,0 +1,14 @@
+﻿@model List<fresher_mwg_demo.Models.BannerModel>
+
+@if (Model != null)
+{
+    <!-- Banner common -->
+    <div class="slider-banner owl-carousel">
+        @foreach (var item in Model)
+        {
+            @Html.Raw(item.ImageUrl)
+            <span>@item.idxyz</span>
+        }
+    </div>
+    <!-- / Banner common -->
+}
