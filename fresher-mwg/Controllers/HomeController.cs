@@ -583,11 +583,6 @@ namespace fresher_mwg.Controllers
             return View("~/Views/Home/Index.cshtml", vm);
         }
 
-        public ActionResult Menu()
-        {
-            ServiceGetCategory();
-            return PartialView("~/Views/Common/_ParitalHeader.cshtml", ServiceGetCategory());
-        }
 
         public ActionResult Contact()
         {
@@ -641,23 +636,6 @@ namespace fresher_mwg.Controllers
 
         }
 
-        public List<CategoryModel> ServiceGetCategory()
-        {
-            var client = new RestClient("http://10.1.4.123:2060//apicategory/getallcategories?siteID=1&langID=vi-VN");
-            client.Timeout = -1;
-            var request = new RestRequest(Method.GET);
-            IRestResponse response = client.Execute(request);
-            var data = Newtonsoft.Json.JsonConvert.DeserializeObject<List<CategoryModelDTO>>(response.Content).Take(6);
-            var result = new List<CategoryModel>();
-            foreach (var item in data)
-            {
-                result.Add(new CategoryModel()
-                {
-                    CategoryID=item.CategoryID,
-                    CategoryName=item.CategoryName
-                });
-            }
-            return result;
-        } 
+        
     }
 }
