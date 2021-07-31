@@ -7,8 +7,10 @@ namespace fresher_mwg.Models
 {
     public class BannerModel
     {
-        public string ImageUrl { get; set; }
-        public string Title { get; set; }
-        public string Detail { get; set; }
+        public string id { get; set; }
+        public string name { get; set; }
+        public string pathImg { get; set; }
+        public string altImg { get; set; }
+        public string description { get; set; }
     }
 }

@@ -4,11 +4,11 @@
 <div class="visit__list">
     @foreach (var item in this.Model)
     {
-        <a href="@item.Path" class="item">
-            <p class="txt-name">@item.Name</p>
+        <a href="@item.id" class="item">
+            <p class="txt-name">@item.name</p>
             <div class="txt-address">
                 <p class="fInter">
-                    @item.Address
+                    @item.address
                 </p>
                 <span><i class="icon-visitmap"></i></span>
             </div>

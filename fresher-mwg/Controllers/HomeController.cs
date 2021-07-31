@@ -17,6 +17,8 @@ namespace fresher_mwg.Controllers
             var vm = new vmHome()
             {
                 Banners = ServiceGetBanner(),
+                Location = ServiceGetLocation(),
+
                 TitleProductsAll = new List<TitleProductModel>()
                 {
                     new TitleProductModel {
@@ -509,46 +511,46 @@ namespace fresher_mwg.Controllers
                 },
                 BannerFooter = new List<BannerModel>()
                 {
-                    new BannerModel
-                    {
-                        ImageUrl = "Contents/images/img_trademark.jpeg",
-                        Title = "Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình",
-                        Detail = "Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình"
-                    },
-                    new BannerModel
-                    {
-                        ImageUrl = "Contents/images/img_trademark.jpeg",
-                        Title = "Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình",
-                        Detail = "Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình"
-                    },
-                    new BannerModel
-                    {
-                        ImageUrl = "Contents/images/img_trademark.jpeg",
-                        Title = "Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình",
-                        Detail = "Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình"
-                    }
+                    //new BannerModel
+                    //{
+                    //    ImageUrl = "Contents/images/img_trademark.jpeg",
+                    //    Title = "Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình",
+                    //    Detail = "Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình"
+                    //},
+                    //new BannerModel
+                    //{
+                    //    ImageUrl = "Contents/images/img_trademark.jpeg",
+                    //    Title = "Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình",
+                    //    Detail = "Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình"
+                    //},
+                    //new BannerModel
+                    //{
+                    //    ImageUrl = "Contents/images/img_trademark.jpeg",
+                    //    Title = "Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình",
+                    //    Detail = "Không gian trẻ trung, hiện đại tư vấn chuyên nghiệp, tận tình"
+                    //}
                 },
-                Location = new List<LocationModel>()
-                {
-                    new LocationModel
-                    {
-                        Path = "#",
-                        Name = "Bluesport hàng xanh",
-                        Address = "294 Xô Viết nghệ Tĩnh, P.21, Q.Bình Thạnh TP. Hồ Chí Minh"
-                    },
-                    new LocationModel
-                    {
-                        Path = "#",
-                        Name = "Bluesport hàng xanh",
-                        Address = "294 Xô Viết nghệ Tĩnh, P.21, Q.Bình Thạnh TP. Hồ Chí Minh"
-                    },
-                    new LocationModel
-                    {
-                        Path = "#",
-                        Name = "Bluesport hàng xanh",
-                        Address = "294 Xô Viết nghệ Tĩnh, P.21, Q.Bình Thạnh TP. Hồ Chí Minh"
-                    }
-                },
+                //Location = new List<LocationModel>()
+                //{
+                //    new LocationModel
+                //    {
+                //        Path = "#",
+                //        Name = "Bluesport hàng xanh",
+                //        Address = "294 Xô Viết nghệ Tĩnh, P.21, Q.Bình Thạnh TP. Hồ Chí Minh"
+                //    },
+                //    new LocationModel
+                //    {
+                //        Path = "#",
+                //        Name = "Bluesport hàng xanh",
+                //        Address = "294 Xô Viết nghệ Tĩnh, P.21, Q.Bình Thạnh TP. Hồ Chí Minh"
+                //    },
+                //    new LocationModel
+                //    {
+                //        Path = "#",
+                //        Name = "Bluesport hàng xanh",
+                //        Address = "294 Xô Viết nghệ Tĩnh, P.21, Q.Bình Thạnh TP. Hồ Chí Minh"
+                //    }
+                //},
                 TotalLocation = 3,
                 Commitment = new List<CommitmentModel>()
                 {
@@ -599,19 +601,28 @@ namespace fresher_mwg.Controllers
 
         public class BannerApiDTO
         {
-            public string Image { get; set; }
-            public string TitleName { get; set; }
-            public string Detail { get; set; }
+            public string id { get; set; }
+            public string name { get; set; }
+            public string pathImg { get; set; }
+            public string altImg { get; set; }
+            public string description { get; set; }
+        }
+
+        public class LocationApiDTO
+        {
+            public string id { get; set; }
+            public string name { get; set; }
+            public string address { get; set; }
         }
 
         // Function
         public List<Models.BannerModel> ServiceGetBanner()
         {
-            var client = new RestClient("https://localhost:44314/api/GetBaner");
+            var client = new RestClient("https://virtserver.swaggerhub.com/tranphuongduy20/MWG_BlueSport/1.0.0/banner");
             client.Timeout = -1;
             var request = new RestRequest(Method.GET);
             IRestResponse response = client.Execute(request);
-            Console.WriteLine();
+            Console.WriteLine(response.Content);
 
             var dataJson = response.Content;
 
@@ -624,18 +635,69 @@ namespace fresher_mwg.Controllers
             {
                 model.Add(new BannerModel()
                 {
-                    Detail = item.Detail,
-                    ImageUrl = item.Image,
-                    Title = item.TitleName
+                    id = item.id,
+                    name = item.name,
+                    pathImg = item.pathImg,
+                    altImg= item.altImg,
+                    description = item.description,
                 });
             }
             #endregion
-
-
             return model;
-
         }
+        public List<Models.LocationModel> ServiceGetLocation()
+        {
+            var client = new RestClient("https://virtserver.swaggerhub.com/tranphuongduy20/MWG_BlueSport/1.0.0/store");
+            client.Timeout = -1;
+            var request = new RestRequest(Method.GET);
+            IRestResponse response = client.Execute(request);
+            Console.WriteLine(response.Content);
 
-        
+            var dataJson = response.Content;
+
+            var storeDto = Newtonsoft.Json.JsonConvert.DeserializeObject<List<LocationApiDTO>>(dataJson);
+
+            var model = new List<Models.LocationModel>();
+
+            #region Mapping
+            foreach (var item in storeDto)
+            {
+                model.Add(new LocationModel()
+                {
+                    id = item.id,
+                    name = item.name,
+                    address = item.address,
+                });
+            }
+            #endregion
+            return model;
+        }
+        //public List<Models.ProductModel> ServiceGetProduct()
+        //{
+        //    var client = new RestClient("https://virtserver.swaggerhub.com/tranphuongduy20/MWG_BlueSport/1.0.0/product");
+        //    client.Timeout = -1;
+        //    var request = new RestRequest(Method.GET);
+        //    IRestResponse response = client.Execute(request);
+        //    Console.WriteLine(response.Content);
+
+        //    var dataJson = response.Content;
+
+        //    var productDto = Newtonsoft.Json.JsonConvert.DeserializeObject<List<LocationApiDTO>>(dataJson);
+
+        //    var model = new List<Models.LocationModel>();
+
+        //    #region Mapping
+        //    foreach (var item in productDto)
+        //    {
+        //        model.Add(new LocationModel()
+        //        {
+        //            id = item.id,
+        //            name = item.name,
+        //            address = item.address,
+        //        });
+        //    }
+        //    #endregion
+        //    return model;
+        //}
     }
 }
